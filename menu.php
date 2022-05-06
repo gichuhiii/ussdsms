@@ -47,6 +47,37 @@ class Menu{
 
     }
     public function sendMoneyMenu($textArray){
+        $level = count($textArray);
+        if ($level == 1) {
+            echo "CON Enter the receiver's Mobile No.";
+        }else if ($level == 2) {
+            echo "CON Enter amount";
+        }else if ($level == 3) {
+            echo "CON Enter your pin:";
+        }else if ($level == 4) {
+            $response = "CON  Send ". $textArray[2] . " to " . $textArray[1] . "\n";
+            $response .= "1. Confirm\n";
+            $response .= "2. Cancel\n";
+            $response .=Util::$GO_BACK. "Back\n";
+            $response .=Util::$MAIN_MENU. "Main Menu\n";
+            echo $response;
+        }else if($level ==5 && $textArray[4] == 1) {
+            //confirm
+            //check pin
+            //check balance
+            //send money
+
+            echo "END Your request is being processed";
+            
+        }else if ($level == 5 && $textArray[4] == 2) {
+            echo "END ThankYou for using our service";
+        }else if ($level == 5 && $textArray[4] == Util :: $GO_BACK) {
+           echo "END You have requested to go back";
+        }else if ($level == 5 && $textArray[4] == Util :: $MAIN_MENU) {
+            echo "END You have requested to go back to the main menu";
+        }else{
+            echo "END Invalid entry";
+        }
 
     }
     public function withdrawMoneyMenu($textArray){
