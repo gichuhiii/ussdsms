@@ -1,5 +1,5 @@
 <?php
-//https://b154-41-80-9-49.in.ngrok.io/ussdsms/index.php
+//https://67ad-105-161-181-148.eu.ngrok.io/ussdsms/index.php
 include_once 'menu.php';
 
 // Read the variables sent via POST from our API

@@ -81,8 +81,27 @@ class Menu{
 
     }
     public function withdrawMoneyMenu($textArray){
+        $level=count($textArray);
+            if($level==1) {
+                echo "CON Enter Agent Number";
+            }else if ($level==2) {
+                echo "CON Enter Amount";
+            }else if($level==3){
+                echo "CON Enter your pin";
+            }else if($level==4){
+                echo "CON withdraw ".$textArray[2]." from agent ".$textArray[1]."\n 1.Confirm\n 2.Cancel\n";
+            }else if ($level==5 && $textArray[4]==1) {
+                //confirm
+                //check if they have money
+                //check if pin is correct
+                echo "END Your request is being processed";
+            }else if ($level==5 && $textArray[4]==2) {
+                echo "END ThankYou";
+            }else{
+                echo "END Invalid entry";
+            }
+        }
 
-    }
     public function checkBalanceMenu($textArray){
 
     }
