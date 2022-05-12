@@ -103,6 +103,17 @@ class Menu{
         }
 
     public function checkBalanceMenu($textArray){
+        $level = count($textArray);
+        if($level == 1){
+            echo "CON Enter Pin";
+        }else if($level ==2){
+            //logic
+            //check PIN
+            echo "END We are processing your request and you will recieve and SMS shortly";
+        } else {
+            echo "END Invalid entry";
+        }
+
 
     }
 }
