@@ -113,8 +113,6 @@ class Menu{
         } else {
             echo "END Invalid entry";
         }
-
-
     }
 }
 
