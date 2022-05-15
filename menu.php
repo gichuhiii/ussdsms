@@ -66,6 +66,7 @@ class Menu{
             //check pin
             //check balance
             //send money
+            //deduct sent amount
 
             echo "END Your request is being processed";
             
