@@ -67,6 +67,7 @@ class Menu{
             //check balance
             //send money
             //deduct sent amount
+            //check if number exists
 
             echo "END Your request is being processed";
             
