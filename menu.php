@@ -4,10 +4,7 @@ class Menu{
     protected $text;
     protected $sessionId;
 
-    function __construct($text,$sessionId){
-        $this->text=$text;
-        $this->sessionId=$sessionId;
-    }
+    function __construct(){}
     
     public function mainMenuRegistered(){
         $response = "CON Reply with\n";
@@ -115,6 +112,28 @@ class Menu{
         } else {
             echo "END Invalid entry";
         }
+    }
+
+    public function middleware ($text)
+    {
+        //remove entries for going back and going to menu
+        return $this->goBack($this->goToMainMenu($text));
+    } 
+
+    public function goBack($text)
+    {
+
+    
+    }
+
+    public function goToMainMenu($text)
+    {
+        $explodedText = explode("*",$text);
+        while(array_search(Util::$MAIN_MENU, $explodedText) != false){
+            $firstIndex = array_search(Util::$MAIN_MENU, $explodedText);
+            $explodedText = array_slice($explodedText, $firstIndex + 1);
+        }
+        return join("*",$explodedText);
     }
 }
 

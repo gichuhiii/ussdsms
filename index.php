@@ -9,7 +9,8 @@ $phoneNumber = $_POST["phoneNumber"];
 $text        = $_POST["text"];
 
 $isRegistered = true;
-$menu = new Menu($text, $sessionId);
+$menu = new Menu();
+$text=$menu->middleware($text);
 
 if ($text == "" && $isRegistered) {
    //user is registered and the string is empty
