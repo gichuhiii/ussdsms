@@ -122,8 +122,12 @@ class Menu{
 
     public function goBack($text)
     {
-
-    
+        $explodedText = explode("*",$text);
+        while(array_search(Util::$GO_BACK, $explodedText) != false){
+            $firstIndex = array_search(Util::$GO_BACK, $explodedText);
+            $explodedText = array_splice($explodedText, $firstIndex-1, 2);
+        }
+        return join("*",$explodedText);
     }
 
     public function goToMainMenu($text)
